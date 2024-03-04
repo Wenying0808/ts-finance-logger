@@ -1,9 +1,10 @@
-const FirstName = 'Wenying';
-console.log(FirstName);
+let string = 'wenying';
+let number = 30;
+let isLoading = false;
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs);
+string = 'string';
+isLoading = true;
+number = 29;
 
-inputs.forEach((input)=>{
-    console.log(input);
-});
+const circ = (diameter: number) => { return diameter * Math.PI};
+console.log(circ(10));
