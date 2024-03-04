@@ -1,28 +1,40 @@
-//arrays
+let character: string;
+let age: number;
+let isLoading: boolean;
 
-let names = ['wenying', 'ingrid'];
-names.push('Bing');
 
-let numbers =[1, 2, 3];
-numbers.push(4);
+//age = 'hi';
+character = 'miffy'
+age = 30;
+isLoading = false;
 
-let mixed = ['wen', 20, 'bing', 30];
+let array: string[];
+//array.push('he'); needs to be initiallized
+array =['hi', 'hello'];
+array.push('hoi');
+
+let mixed:(string|number)[]= [];
 mixed.push(30);
-mixed[0]=30;
+mixed.push('wen');
+//mixed.push(false);
 
-//objects
+console.log(mixed);
 
-let objects = {
-    name: 'wenying',
-    age: 30,
+let uid:(string|number);
+uid = 'string';
+
+
+let backpack: object;
+backpack = {brand: 'rains', price: 100};
+
+let backpack2: {
+    brand: string,
+    price: number,
+    inStock: boolean,
 }
 
-objects.name = 'ying';
-//objects.name = 30;
-//objects.id=30;
-
-objects = {
-    name: 'bing',
-    age: 29,
-    //skills:"phd",
+backpack2 = {
+    brand: 'rain',
+    price: 200,
+    inStock: true,
 }
