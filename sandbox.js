@@ -24,3 +24,18 @@ backpack2 = {
     price: 200,
     inStock: true,
 };
+var Age = 25; //initial value 25
+Age = true;
+console.log(Age);
+Age = 'Hi';
+console.log(Age);
+Age = { property: 'old' };
+console.log(Age);
+var Mixed = []; //empty array
+Mixed.push(5);
+Mixed.push(true);
+Mixed.push('hey');
+console.log(Mixed);
+var Brabra;
+Brabra = { name: 'ha', age: 20 };
+console.log(Brabra);

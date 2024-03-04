@@ -38,3 +38,24 @@ backpack2 = {
     price: 200,
     inStock: true,
 }
+
+
+let Age: any = 25; //initial value 25
+Age = true;
+console.log(Age);
+
+Age = 'Hi';
+console.log(Age);
+
+Age = {property: 'old'};
+console.log(Age);
+
+let Mixed: any[] =[]; //empty array
+Mixed.push(5);
+Mixed.push(true);
+Mixed.push('hey');
+console.log(Mixed);
+
+let Brabra: {name: any, age: number};
+Brabra = {name:'ha', age: 20};
+console.log(Brabra);
