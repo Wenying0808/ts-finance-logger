@@ -1,11 +1,14 @@
 "use strict";
 //classes
 class Invoice {
+    //readonly client: string; 
+    //private details: string; // I can add private before pro to make it not acccessible
+    // public amount: number; // default is public, so it can be accessible
     //constructor
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     //method
     format() {
@@ -14,12 +17,12 @@ class Invoice {
 }
 const invOne = new Invoice('Ingrid', 'website', 200);
 const invTwo = new Invoice('Bing', 'website', 300);
-invOne.amount = 600;
-console.log(invOne, invTwo);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
 const form = document.querySelector('.new-item-form'); //class
 //inputs:
 const type = document.querySelector('#type');
