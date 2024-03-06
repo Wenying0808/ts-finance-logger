@@ -1,32 +1,7 @@
 import { Invoice } from './classes/invoice.js'; //it's from js not from ts
+import { ListTemplate } from './classes/listTemplate.js';
 import { Payment } from './classes/payment.js';
 import { HasFormatter } from './interfaces/hasFormatter.js';
-
-let docOne: HasFormatter;
-let docTwo: HasFormatter;
-
-docOne = new Invoice ('Wenying', 'Website Work', 200);
-docTwo = new Payment ('Ingrid', 'Website Upgrade', 100);
-
-let docs: HasFormatter[] = [];
-docs.push(docOne, docTwo);
-console.log(docs);
-
-
-
-const invOne = new Invoice ('Ingrid', 'website', 200);
-const invTwo = new Invoice ('Bing', 'website', 300);
-
-let invoices: Invoice[] = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-
-invoices.forEach(inv=>{
-    console.log(inv.client, inv.amount, inv.format());
-});
-
-
-
 
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement; //class
@@ -38,15 +13,39 @@ const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
 //take the inputs to submit
+
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate (ul);
+
+
 form.addEventListener('submit', (e: Event)=>{
     e.preventDefault();
 
+    let values: [string, string, number];
+    values = [tofrom.value, details.value, amount.valueAsNumber];
+
     let doc: HasFormatter;
     if (type.value==='invoice'){
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     } else{
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
-    console.log(doc);
-    
+
+    list.render(doc, type.value, 'end');
+
 });
+
+
+//tuples
+
+let arr = ['ryu', 35, true];
+arr[1] = false;
+
+//certain position be certain type
+
+let tuple: [string, number, boolean] = ['ryu', 35, true];
+//tuple[1] = false;
+tuple[0] = 'wen';
+
+let student: [string, number];
+student = ['wenying', 456435];
