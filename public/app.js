@@ -1,16 +1,12 @@
 import { Invoice } from './classes/invoice.js'; //it's from js not from ts
-const Dutch = {
-    name: 'Van Delft',
-    age: 100,
-    greating(text) {
-        console.log(text);
-    }
-};
-console.log(Dutch);
-const greetPerson = (person) => {
-    console.log('Hi', person.name);
-};
-greetPerson(Dutch);
+import { Payment } from './classes/payment.js';
+let docOne;
+let docTwo;
+docOne = new Invoice('Wenying', 'Website Work', 200);
+docTwo = new Payment('Ingrid', 'Website Upgrade', 100);
+let docs = [];
+docs.push(docOne, docTwo);
+console.log(docs);
 const invOne = new Invoice('Ingrid', 'website', 200);
 const invTwo = new Invoice('Bing', 'website', 300);
 let invoices = [];
@@ -28,5 +24,12 @@ const amount = document.querySelector('#amount');
 //take the inputs to submit
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });

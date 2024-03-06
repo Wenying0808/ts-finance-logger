@@ -1,28 +1,16 @@
 import { Invoice } from './classes/invoice.js'; //it's from js not from ts
+import { Payment } from './classes/payment.js';
+import { HasFormatter } from './interfaces/hasFormatter.js';
 
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
 
-interface Person {
-    name: string;
-    age: number;
-    greating(t: string): void;
-}
+docOne = new Invoice ('Wenying', 'Website Work', 200);
+docTwo = new Payment ('Ingrid', 'Website Upgrade', 100);
 
-const Dutch: Person = {
-    name: 'Van Delft',
-    age: 100,
-    greating(text: string): void {
-        console.log(text);
-    }
-}
-
-console.log(Dutch);
-
-
-const greetPerson = (person: Person) => {
-    console.log('Hi', person.name)
-}
-
-greetPerson(Dutch);
+let docs: HasFormatter[] = [];
+docs.push(docOne, docTwo);
+console.log(docs);
 
 
 
@@ -52,5 +40,13 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 //take the inputs to submit
 form.addEventListener('submit', (e: Event)=>{
     e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+
+    let doc: HasFormatter;
+    if (type.value==='invoice'){
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    } else{
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
+    
 });
