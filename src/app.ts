@@ -1,12 +1,40 @@
-//const link = document.querySelector('a')!; //add exclaimation mark to tell ts this is not a null
+//classes
 
-//console.log(link.href);
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
 
-//const allforms = document.querySelector('form')!; //element
+    //constructor
+    constructor (c: string, d: string, a: number){
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    //method
+    format(){
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+
+const invOne = new Invoice ('Ingrid', 'website', 200);
+const invTwo = new Invoice ('Bing', 'website', 300);
+
+invOne.amount = 600;
+
+console.log(invOne, invTwo);
+
+
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
+
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement; //class
-console.log(form.children);
-
 
 //inputs:
 const type = document.querySelector('#type') as HTMLSelectElement;

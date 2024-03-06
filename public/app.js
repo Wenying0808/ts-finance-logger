@@ -1,9 +1,26 @@
 "use strict";
-//const link = document.querySelector('a')!; //add exclaimation mark to tell ts this is not a null
-//console.log(link.href);
-//const allforms = document.querySelector('form')!; //element
+//classes
+class Invoice {
+    //constructor
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    //method
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+const invOne = new Invoice('Ingrid', 'website', 200);
+const invTwo = new Invoice('Bing', 'website', 300);
+invOne.amount = 600;
+console.log(invOne, invTwo);
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
 const form = document.querySelector('.new-item-form'); //class
-console.log(form.children);
 //inputs:
 const type = document.querySelector('#type');
 const tofrom = document.querySelector('#tofrom');
