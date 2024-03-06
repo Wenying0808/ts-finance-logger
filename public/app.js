@@ -1,4 +1,16 @@
 import { Invoice } from './classes/invoice.js'; //it's from js not from ts
+const Dutch = {
+    name: 'Van Delft',
+    age: 100,
+    greating(text) {
+        console.log(text);
+    }
+};
+console.log(Dutch);
+const greetPerson = (person) => {
+    console.log('Hi', person.name);
+};
+greetPerson(Dutch);
 const invOne = new Invoice('Ingrid', 'website', 200);
 const invTwo = new Invoice('Bing', 'website', 300);
 let invoices = [];
