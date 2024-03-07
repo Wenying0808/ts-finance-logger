@@ -23,12 +23,5 @@ form.addEventListener('submit', (e) => {
     }
     list.render(doc, type.value, 'end');
 });
-//tuples
-let arr = ['ryu', 35, true];
-arr[1] = false;
-//certain position be certain type
-let tuple = ['ryu', 35, true];
-//tuple[1] = false;
-tuple[0] = 'wen';
-let student;
-student = ['wenying', 456435];
+
+
