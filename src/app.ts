@@ -35,17 +35,3 @@ form.addEventListener('submit', (e: Event)=>{
 
 });
 
-
-//tuples
-
-let arr = ['ryu', 35, true];
-arr[1] = false;
-
-//certain position be certain type
-
-let tuple: [string, number, boolean] = ['ryu', 35, true];
-//tuple[1] = false;
-tuple[0] = 'wen';
-
-let student: [string, number];
-student = ['wenying', 456435];
