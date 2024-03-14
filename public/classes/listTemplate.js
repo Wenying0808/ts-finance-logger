@@ -7,10 +7,21 @@ export class ListTemplate {
         const li = document.createElement('li');
         const h4 = document.createElement('h4');
         h4.innerText = heading;
-        li.append(h4);
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButton.classList.add('delete-button');
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('heading-delete-container');
+        divContainer.appendChild(h4);
+        divContainer.appendChild(deleteButton);
+        li.append(divContainer);
         const p = document.createElement('p');
         p.innerText = item.format();
         li.append(p);
+        //remove the list when clicking delete button
+        deleteButton.addEventListener('click', () => {
+            li.remove();
+        });
         if (pos === 'start') {
             this.container.prepend(li);
         }

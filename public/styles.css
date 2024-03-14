@@ -55,14 +55,23 @@ body{
     display: inline-block;
     margin: 0 10px;
   }
-  button{
+
+  .add-button{
     color: white;
     border: 0;
     background: #ff0aa7;
     padding: 6px;
     min-width: 80px;
     border-radius: 4px;
+    cursor: pointer;
   }
+
+  .add-button:disabled {
+    background-color: #919191; 
+    cursor: not-allowed; 
+}
+
+
   footer a{
     text-align: center;
     display: block;
@@ -70,3 +79,28 @@ body{
     margin-top: 40px;
     font-size: 0.7em;
   }
+
+
+/* ListTemplate.ts file */
+.delete-button {
+    border: none;
+    padding: 6px 10px;
+    background: black;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+  background:red;
+}
+
+.heading-delete-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+   
+
+}
