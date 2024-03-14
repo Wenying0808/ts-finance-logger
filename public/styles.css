@@ -8,7 +8,7 @@ body{
   }
   h1{
     margin: 40px auto;
-    color: #ff0aa7;
+    color: #4758DC;
     text-align: center;
   }
   ul{
@@ -44,7 +44,7 @@ body{
     font-weight: bold;
     font-size: 0.8em;
     color: #333;
-    margin: 16px 0 6px;
+    margin: 0 0 10px 0;
   }
   input, select{
     padding: 6px;
@@ -59,15 +59,19 @@ body{
   .add-button{
     color: white;
     border: 0;
-    background: #ff0aa7;
+    background: #4758DC;
     padding: 6px;
     min-width: 80px;
     border-radius: 4px;
     cursor: pointer;
   }
 
+  .add-button:enabled:hover{
+    box-shadow: 0px 0px 12px 0px rgba(71, 88, 220, 0.40);
+  }
+
   .add-button:disabled {
-    background-color: #919191; 
+    background-color: #8B9ACE; 
     cursor: not-allowed; 
 }
 
